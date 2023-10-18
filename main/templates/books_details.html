@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+<div class="card mb-3" style="max-width: 100%;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{ bok.image.url }}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+            <h1>nomi:<span class='text-secondary'>{{ bok.name }}</span></h1>
+            <h1>sinf:<span class='text-secondary'>{{ bok.book_class }}</span></h1>
+            <a class="btn btn-outline-success" href="{{ bok.file.url }}">yuklash</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

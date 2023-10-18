@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        
+        <center>
+            <h2> Javoblar</h2>
+            {% for jav in jav %}
+                <h4>{{ jav.names }}</h4>
+            {% endfor %}
+        </center>
+        <center>
+            <form method="post" style="display: flex; justify-content: center;align-items: center; width: 400px;">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <input type="text" name="name" class="form-control" placeholder="Javob Qo`shish" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">+</button>
+                  </div>
+                  
+            </form>
+        </center>
+    </div>
+{% endblock content %}

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+  .da{
+    height: 400px;
+  }
+  .da-o{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+<div class="container">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          {% for ima in ima %}
+          <div class="carousel-item da {% if forloop.counter0 == 0 %} active {% endif %}">
+            <div class="da-o"><img src="{{ ima.image.url }}" class="d-block" alt="..."></div>
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+</div>
+<div class="container">
+    <div class="row" style="margin-top: 50px;">
+      <div class="col">
+              <h5 class="card-title">3-maktab</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+              </p>
+              <a href="https://maps.app.goo.gl/fDwG5wjbcmNMvsY57" class="btn btn-primary">ko`rish</a>
+      </div>
+    </div>
+
+  </div>
+{% endblock content %}

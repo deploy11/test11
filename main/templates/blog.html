@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Product Cart Start -->
+<div class="container">
+    <div class=" w-100 mt-4">
+        <div class="d-flex flex-wrap justify-content-between">
+            <h4 class="d-block" >Kitoblar</h4>
+            <form class="d-flex" method="get" >
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+                <button class="btn btn-outline-dark" type="submit">Search</button>
+              </form>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-between ">
+            {% for i in blog %}
+            <!-- Product Cart Start -->
+            <div class="card border border-0 shadow-sm d-inline-block m-1 mt-3" style="width: 16.5rem;" >
+                {% if i.productimage_set.exists %}
+                    <img height="200" class=" card-img-top" src="{{i.productimage_set.all.first.image.url}}" alt="">
+                {% else %}
+                    <img height="200" class=" card-img-top" src="images/14pro2.jfif" alt="ds">
+                {% endif %}
+                <div class="card-body">
+                    <h6 class="align-center card-title">{{i.title}}</h6>
+                    <div class="buttons d-flex flex-wrap justify-content-between ">
+                        <a href="{% url 'detailts_blog' i.id %}" type="button" class="btn btn-outline-success">o`qish</a>
+                    </div>
+                </div>
+            </div>  
+            <!-- Product Cart End -->
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Product Cart End -->
+{% endblock content %}
